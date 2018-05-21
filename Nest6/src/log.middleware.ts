@@ -28,10 +28,10 @@ export class LogMiddleware implements NestMiddleware{
             
             console.log('Desde el Middleware', nombreAplicacion, anio);
             console.log('**** DESDE MIDDLEWARE ****', nombreAplicacion, anio,
-                this._usuarioService.mostrarUsuarios());
+                this._usuarioService.mostrarUsuario());
             console.log(respuesta);
             next(); // ERROR SI NO SE LLAMA
         };
         };
-    }
+
 }
