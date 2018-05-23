@@ -14,5 +14,5 @@ export  class FotoEntity {
     @ManyToOne(
         type => UsuarioEntity, UsuarioEntity => UsuarioEntity.fotos)
 
-    usuarioId: UsuarioEntity;
+    usuario: UsuarioEntity;
 }

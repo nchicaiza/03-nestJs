@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {UsuarioEntity} from "./usuario/usuario.entity";
 import {FotoEntity} from "./foto/foto.entity";
-import {AppController} from "../../ejemplo/src/app.controller";
-import {UsuarioController} from "../../ejemplo/src/usuario.controller";
 import {ParametrosController} from "./parametros.controller";
 import {AppService} from "./app.service";
-import {UsuarioService} from "../../ejemplo/src/usuario.service";
+import {AppController} from "./app.controller";
+import {UsuarioController} from "./usuario.controller";
+import {UsuarioService} from "./usuario.service";
 
 
 @Module({

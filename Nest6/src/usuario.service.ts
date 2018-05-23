@@ -2,13 +2,12 @@ import {Injectable} from "@nestjs/common";
 
 
 @Injectable()
-
 export class UsuarioService {
-     private usuarios:Usuario[]=[];
+     usuarios:Usuario[]=[];
 
     crearUsuario(usuario: Usuario){
         this.usuarios.push(usuario);
-        return this.usuarios;
+        return usuario;
 
     }
 

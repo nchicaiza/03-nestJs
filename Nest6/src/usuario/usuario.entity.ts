@@ -7,12 +7,15 @@ export  class UsuarioEntity {
 
     @PrimaryGeneratedColumn()
     id: number;
+
     @Column({length:50})
     nombre: string;
 
     @ManyToOne(
-        type => FotoEntity, FotoEntity => FotoEntity.usuarioId)
+        type => FotoEntity,
+        fotoEntity => fotoEntity.usuario
+    )
 
-    fotos: FotoEntity;
+    fotos: FotoEntity[];
 
 }
