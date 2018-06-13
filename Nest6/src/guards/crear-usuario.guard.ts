@@ -5,29 +5,34 @@ import {Observable} from "rxjs/index";
 @Injectable()
 export class CrearUsuarioGuard implements CanActivate {
 
-    constructor(private readonly reflector: Reflector){}
+    constructor(private readonly reflector: Reflector) {
+    }
 
-    canActivate(context: ExecutionContext)
+    canActivate(
+        context: ExecutionContext)
         : boolean |
         Promise<boolean> |
         Observable<boolean> {
-
         const request = context.switchToHttp().getRequest();
-
         const cabeceras = request.headers;
 
-        const permisos = this.reflector.get(
-            metadatakey: 'permisos',
-            context.getHandler()
-        );
+        const permisos = this.reflector
+            .get(
+                'permisos',
+                context.getHandler()
+            );
 
-        console.log('Contexto:', context);
-        console.log('cabeceras', request.headers);
+        console.log('Permisos: ', permisos);
+
+
+        console.log('Contexto: ', context);
+        console.log('Cabeceras: ', request.headers);
 
         if (cabeceras.hola === "Mundo") {
             return true
-        }else {
+        } else {
             return false;
         }
     }
+
 }
